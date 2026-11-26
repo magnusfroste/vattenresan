@@ -34,13 +34,11 @@
     } catch (e) { /* ljud är alltid valfritt */ }
   }
   function tal(text) {
-    if (!S.ljud || !('speechSynthesis' in window)) return;
-    try {
-      window.speechSynthesis.cancel();
-      const u = new SpeechSynthesisUtterance(text);
-      u.lang = 'sv-SE'; u.rate = 0.98; u.pitch = 1.05;
-      window.speechSynthesis.speak(u);
-    } catch (e) { /* de kan tysta utan anledning */ }
+    /* Färdiga mp3-filer ur ljud/ (se ljud/lines.js) – ingen talsyntes, så rösten
+       låter likadant i alla webbläsare. Saknas filen blir det tyst. */
+    if (!S.ljud) return;
+    try { if (window.__rost && window.__rost(text, !0)) return; } catch (e) { /* ljud är alltid valfritt */ }
+    try { if (window.console && window.__rostFinns && !window.__rostFinns(text)) console.warn('saknar mp3:', text); } catch (e) {}
   }
   window.addEventListener('pointerdown', function ettSensor() {
     try {
@@ -253,7 +251,7 @@
     $('overlay').hidden = false;
     $('ov-titel').focus();
     pigga(660, 0.14); setTimeout(() => pigga(880, 0.3), 150);
-    tal('Nivå klar. Du fick ' + S.stjarnor + ' av ' + niva().steg.length + ' stjärnor.');
+    tal('Nivå klar!');
     meddela('round_done', snitt);
   }
 
@@ -289,7 +287,7 @@
     $('ljudikon').innerHTML = S.ljud
       ? '<path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7" fill="none" stroke-width="1.8"/><path d="M18.8 6a8 8 0 0 1 0 12" fill="none" stroke-width="1.8"/>'
       : '<path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M17 9.5l5 5M22 9.5l-5 5" fill="none" stroke-width="1.9"/>';
-    if (!S.ljud && 'speechSynthesis' in window) { try { window.speechSynthesis.cancel(); } catch (e) {} }
+    if (!S.ljud) { try { if (window.__rostStopp) window.__rostStopp(); } catch (e) {} }
     meddela('sound_off');
   });
   $('ljudikon').innerHTML =
