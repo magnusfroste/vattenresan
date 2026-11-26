@@ -3,7 +3,7 @@
 - **Titel:** Vattenresan
 - **Kort beskrivning (max 500):** Följ en droppe vatten ett helt varv genom vattnets kretslopp:
   avdunstning, kondensering, nederbörd, infiltration och avrinning.
-- **URL:** https://vattenresan.shipholm.dev (katalogens egen adress: https://vattenresan.skolappar.com)
+- **URL:** https://vattenresan.shipholm.dev (katalogens egen adress: https://vattenresan.skolappar.org)
 - **Ämne / årskurs / typ / enhet:** STEM / 3–6 / Öva / Alla enheter
 - **Lgr22:** KE.4-6.1.3 – ”Vattnets egenskaper och kretslopp.” (Skolverket, Syllabus API,
   hämtad 2026-11-23; citerat ordagrant även på appens startskärm)

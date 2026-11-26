@@ -64,7 +64,7 @@ go/no-go gjordes som en skriven genomgång i stället:
   1440×900 och 1200×900. Inget element utanför viewporten i något av lägena.
 - **Tryckytor:** svarsplattor 323×76 px (iPad liggande), 748×62 px (iPad stående), 370×62 px
   (390 px telefon), 461×76 px (desktop); ljudknapp 48×48 px. Minsta yta 62 px > 56 px-kravet.
-- `check_app` på https://vattenresan.skolappar.com: **15/15, 0 warnings** (381 ms).
+- `check_app` på https://vattenresan.skolappar.org: **15/15, 0 warnings** (381 ms).
 - **Kortbild:** `public/kort.png`, 1200×900, spelmoment ur nivå 1 utan overlay. Uppladdad till
   katalogen som `/images/d5a36892c32b9dc4f186f5e163f15b0c.png` (200, sparad kopia 1200×900).
   Bilden granskades programmatiskt (4 513 distinkta färger, solläge, moln, havsblått och
